@@ -1,0 +1,39 @@
+.custom-calendar{
+    background-color: #f8d648;
+    align-items: center;
+    max-height: 70vh;
+    border-color: #f8d648;
+    color:#050d21;
+    width: 50vh;
+}
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #050d21;
+    height: 100vh;
+    color:#050d21;
+}
+.calendarbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #f8d648;;
+    height: 60vh;
+    box-shadow: 0 0 10px hsla(60, 86%, 81%, 0.9);
+    width: 60vh;
+
+    
+}
+.payday-marker {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4caf50;
+    color: white;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+  }
+  
