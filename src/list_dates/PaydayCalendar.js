@@ -1,50 +1,50 @@
 import React, { useState, useEffect } from "react";
+import axios from 'axios';
+import { format } from 'date-fns';
 import "./listDates.css";
+
 function PaydayCalendar() {
-  const [paydays, setPaydays] = useState([]);
+  const [payDay, setPayDay] = useState('');
+  const [paydayDates, setPaydayDates] = useState([]);
 
   useEffect(() => {
-    // Fetch the paydays from the API endpoint
-    fetch("https://example.com/paydays")
-      .then((response) => response.json())
-      .then((data) => setPaydays(data.next_pay_days));
-  }, []);
+    if (payDay) {
+      axios.get(`http://localhost:8080/till-sallary/pay-day/${payDay}/list-dates`)
+        .then(response => setPaydayDates(response.data.next_pay_days))
+        .catch(error => console.error(error));
+    }
+  }, [payDay]);
 
-  // Transform the paydays data into an array of Date objects
-  const paydayDates = paydays.map((payday) => new Date(payday.next_pay_day));
-
+  function handleSubmit(event) {
+    event.preventDefault();
+    const payDayInput = document.getElementById('pay-day-input').value;
+    setPayDay(payDayInput);
+  }
 
   return (
-  <div className="content">
-    <div className="calendarbox">
-
-    {/* {/* <div style="overflow-x:auto;"> */}
-  <table>
-  <thead>
-    <tr>
-      <th>Next Pay Day</th>
-      <th>Days Left</th>
-    </tr>
-  </thead>
-  <tbody>
-    {/* {paydayDates.map((date) => (
-      <tr key={date}>
-        <td>{format(date, "dd MMMM, yyyy")}</td>
-        <td>{Math.ceil((date - new Date()) / (1000 * 60 * 60 * 24))}</td>
-      </tr>
-    ))} */}
-    <tr>
-      <td>15 March, 2023</td>
-      <td>11</td>
-    </tr>
-  </tbody>
-</table>
-    
-     <form action="input_date">
-     <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day"  /><br /><br />
-          </form>
-          <button class="button">Enter</button>
-    </div>
+    <div className="content">
+      <div className="calendarbox">
+        <table>
+          <thead>
+            <tr>
+              <th>Next Pay Day</th>
+              <th>Days Left</th>
+            </tr>
+          </thead>
+          <tbody>
+            {paydayDates.map((date) => (
+              <tr key={date.next_pay_day}>
+                <td>{date.next_pay_day}</td>
+                <td>{date.days_left}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <form onSubmit={handleSubmit}>
+          <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day" /><br /><br />
+          <button className="button" type="submit">Enter</button>
+        </form>
+      </div>
     </div>
   );
 }
