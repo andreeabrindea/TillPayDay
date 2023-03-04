@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import './howMuch.css';
+import { Link } from 'react-router-dom';
 
 function getData(payDay) {
   return axios.get(`http://localhost:8080/till-sallary/how-much?pay_day=${payDay}`)
@@ -13,7 +14,7 @@ function HowMuch() {
     next_pay_day: '',
     days_left: ''
   });
-  
+
   function handleSubmit(event) {
     event.preventDefault();
     const payDay = document.getElementById('pay-day-input').value;
@@ -37,7 +38,9 @@ function HowMuch() {
             <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day" /><br /><br />
             <button className="button" type="submit">Enter</button>
           </form>
+          <Link to="/listDates">
           <button className="see_more">See More</button>
+          </Link>
         </div >
       </div>
     </div>
