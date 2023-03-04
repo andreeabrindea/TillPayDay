@@ -5,6 +5,7 @@
     border-color: #f8d648;
     color:#050d21;
     width: 50vh;
+    border-radius: 5px;
 }
 .content{
     display: flex;
@@ -13,6 +14,7 @@
     background-color: #050d21;
     height: 100vh;
     color:#050d21;
+    border-radius: 5px;
 }
 .calendarbox{
     display: flex;
@@ -23,10 +25,11 @@
     height: 60vh;
     box-shadow: 0 0 10px hsla(60, 86%, 81%, 0.9);
     width: 60vh;
+    border-radius: 5px;
 
     
 }
-.payday-marker {
+/* .payday-marker {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,5 +38,18 @@
     border-radius: 50%;
     width: 24px;
     height: 24px;
+  } */
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 50%;
+    border: 1px solid black;
+    margin-bottom: 50px;
   }
   
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  /* tr:nth-child(even){background-color: #f2f2f2} */

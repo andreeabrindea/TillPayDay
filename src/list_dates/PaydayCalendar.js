@@ -1,7 +1,4 @@
 import React, { useState, useEffect } from "react";
-import Calendar from "react-calendar";
-import format from "date-fns/format";
-import "react-calendar/dist/Calendar.css";
 import "./listDates.css";
 function PaydayCalendar() {
   const [paydays, setPaydays] = useState([]);
@@ -16,18 +13,33 @@ function PaydayCalendar() {
   // Transform the paydays data into an array of Date objects
   const paydayDates = paydays.map((payday) => new Date(payday.next_pay_day));
 
-  // Render the calendar view with the paydays highlighted
+
   return (
   <div className="content">
     <div className="calendarbox">
-    <Calendar className="custom-calendar" // add a custom class to the component
-    tileContent={({ date, view }) => {
-        // Highlight the paydays in the month view
-        if (view === "month" && paydayDates.includes(date)) {
-          return <div className="payday-marker">{format(date, "d")}</div>;
-        }
-      }}
-    />
+
+    {/* {/* <div style="overflow-x:auto;"> */}
+  <table>
+  <thead>
+    <tr>
+      <th>Next Pay Day</th>
+      <th>Days Left</th>
+    </tr>
+  </thead>
+  <tbody>
+    {/* {paydayDates.map((date) => (
+      <tr key={date}>
+        <td>{format(date, "dd MMMM, yyyy")}</td>
+        <td>{Math.ceil((date - new Date()) / (1000 * 60 * 60 * 24))}</td>
+      </tr>
+    ))} */}
+    <tr>
+      <td>15 March, 2023</td>
+      <td>11</td>
+    </tr>
+  </tbody>
+</table>
+    
      <form action="input_date">
      <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day"  /><br /><br />
           </form>
