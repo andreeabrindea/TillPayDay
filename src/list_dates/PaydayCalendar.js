@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from 'axios';
 import { format } from 'date-fns';
 import "./listDates.css";
+import { Link } from 'react-router-dom';
+
 
 function PaydayCalendar() {
   const [payDay, setPayDay] = useState('');
@@ -44,7 +46,9 @@ function PaydayCalendar() {
           <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day" /><br /><br />
           <button className="button" type="submit">Enter</button>
         </form>
+        <Link to="/">
         <button className="back">Back</button>
+        </Link>
       </div>
     </div>
   );
