@@ -44,6 +44,7 @@ function PaydayCalendar() {
           <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day" /><br /><br />
           <button className="button" type="submit">Enter</button>
         </form>
+        <button className="back">Back</button>
       </div>
     </div>
   );
