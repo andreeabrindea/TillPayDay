@@ -41,7 +41,7 @@ function HowMuch() {
   return (
     <div className="body">
       <div className="until">
-        <h1 className="until_numeric">{data.days_left}</h1>
+        <h1 className="until_numeric">{data.days_left} days left</h1>
         <div className="until_date">{data.next_pay_day}</div>
         <div className="user_input">
           <form onSubmit={handleSubmit}>
