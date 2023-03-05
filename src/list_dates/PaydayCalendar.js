@@ -13,7 +13,15 @@ function PaydayCalendar() {
     if (payDay) {
       axios.get(`http://localhost:8080/till-sallary/pay-day/${payDay}/list-dates`)
         .then(response => setPaydayDates(response.data.next_pay_days))
-        .catch(error => console.error(error));
+        .catch(error => {
+          if (error.response && error.response.status === 404) {
+            setPaydayDates([]);
+            alert("Invalid input. Please enter a day between 1 and 31.");
+            document.getElementById('pay-day-input').value = ''; // clear input value
+          } else {
+            console.error(error);
+          }
+        });
     }
   }, [payDay]);
 
@@ -21,6 +29,7 @@ function PaydayCalendar() {
     event.preventDefault();
     const payDayInput = document.getElementById('pay-day-input').value;
     setPayDay(payDayInput);
+    document.getElementById('pay-day-input').value = ''; // clear input value
   }
 
   return (

@@ -6,7 +6,13 @@ import { Link } from 'react-router-dom';
 function getData(payDay) {
   return axios.get(`http://localhost:8080/till-sallary/how-much?pay_day=${payDay}`)
     .then(response => response.data)
-    .catch(error => console.error(error));
+    .catch(error => {
+      if (error.response && error.response.status === 404) {
+        throw new Error("Invalid input. Please enter a day between 1 and 31.");
+      } else {
+        console.error(error);
+      }
+    });
 }
 
 function HowMuch() {
@@ -24,10 +30,14 @@ function HowMuch() {
           next_pay_day: response.next_pay_day,
           days_left: response.days_left
         });
+        document.getElementById('pay-day-input').value = ''; // clear input value
       })
-      .catch(error => console.error(error));
+      .catch(error => {
+        alert(error.message);
+      });
   }
-
+  
+  
   return (
     <div className="body">
       <div className="until">
@@ -35,7 +45,7 @@ function HowMuch() {
         <div className="until_date">{data.next_pay_day}</div>
         <div className="user_input">
           <form onSubmit={handleSubmit}>
-            <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day" /><br /><br />
+            <input type="text" id="pay-day-input" placeholder='pay day:' name="input_pay_day"  /><br /><br />
             <button className="button" type="submit">Enter</button>
           </form>
           <Link to="/listDates">
