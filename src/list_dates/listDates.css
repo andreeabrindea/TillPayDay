@@ -28,8 +28,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #f8d648;;
-    max-height: 100vh;
+    background-color: #f8d648;
     box-shadow: 0 0 10px hsla(60, 86%, 81%, 0.9);
     width: 60vh;
     border-radius: 1vh;    
