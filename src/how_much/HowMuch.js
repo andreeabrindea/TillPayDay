@@ -4,7 +4,8 @@ import './howMuch.css';
 import { Link } from 'react-router-dom';
 
 function getData(payDay) {
-  return axios.get(`http://localhost:8080/till-sallary/how-much?pay_day=${payDay}`)
+ // https://tillpaydayb.fly.dev/till-sallary/how-much?pay_day=13
+  return axios.get(`https://tillpaydayb.fly.dev/till-sallary/how-much?pay_day=${payDay}`)
     .then(response => response.data)
     .catch(error => {
       if (error.response && error.response.status === 404) {
