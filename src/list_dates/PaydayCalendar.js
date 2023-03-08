@@ -10,7 +10,7 @@ function PaydayCalendar() {
 
   useEffect(() => {
     if (payDay) {
-      axios.get(`http://localhost:8080/till-sallary/pay-day/${payDay}/list-dates`)
+      axios.get(`https://tillpaydayb.fly.dev/till-sallary/pay-day/${payDay}/list-dates`)
         .then(response => setPaydayDates(response.data.next_pay_days))
         .catch(error => {
           if (error.response && error.response.status === 404) {
