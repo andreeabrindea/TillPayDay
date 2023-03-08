@@ -1,7 +1,7 @@
 .custom-calendar{
     background-color: #f8d648;
     align-items: center;
-    max-height: 100vh;
+    max-height: 80vh;
     border-color: #f8d648;
     color:#050d21;
     width: 50vh;
@@ -17,17 +17,22 @@
     border-radius: 5px;
     min-height: 60vh;
 }
+@media (max-width: 768px) {
+  .content {
+    font-size: 2vh;
+    width: 100%;
+  }
+}
 .calendarbox{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: #f8d648;;
-    min-height: 60vh;
-    max-height: 80vh;
+    max-height: 100vh;
     box-shadow: 0 0 10px hsla(60, 86%, 81%, 0.9);
     width: 60vh;
-    border-radius: 5px;    
+    border-radius: 1vh;    
 }
 form {
     display: flex;
@@ -44,7 +49,7 @@ form {
   }
 
   table {
-    margin-top: 20px;
+    margin-top: 5vh;
     border-collapse: collapse;
     border-spacing: 0;
     width: 50%;
@@ -57,7 +62,7 @@ form {
     padding: 8px;
   }
   .back{
-    margin-bottom: 20px;
+    margin-bottom: 2vh;
     padding: 0 14px;
     min-width: 50vh;
     min-height: 5vh;
@@ -92,7 +97,8 @@ form {
   
   @media (min-width: 768px) {
     .back{
-      padding: 0 40px;
+      padding: 0 4vh;
     }
   }
+
   

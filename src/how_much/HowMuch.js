@@ -4,7 +4,6 @@ import './howMuch.css';
 import { Link } from 'react-router-dom';
 
 function getData(payDay) {
- // https://tillpaydayb.fly.dev/till-sallary/how-much?pay_day=13
   return axios.get(`https://tillpaydayb.fly.dev/till-sallary/how-much?pay_day=${payDay}`)
     .then(response => response.data)
     .catch(error => {

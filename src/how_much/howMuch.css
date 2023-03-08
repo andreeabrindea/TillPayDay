@@ -67,6 +67,7 @@
   .button{
     align-items: center;
     margin-bottom: 10px; 
+    margin-top: 0.5vh;
     background-color: #fee6e3;
     border: 2px solid #111;
     border-radius: 8px;
@@ -97,7 +98,7 @@
   
   @media (min-width: 768px) {
     .button{
-      padding: 0 40px;
+      margin-top: 2vh;
     }
   }
   
@@ -140,3 +141,6 @@
     }
   }
   
+  .pay_day_input{
+    margin-bottom: 0.5vh;
+  }
