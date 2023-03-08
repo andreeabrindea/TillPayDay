@@ -6,6 +6,7 @@
     align-items: center;
     height: 100vh; /* Set the height of the body to 100% of the viewport height */
     background-color: #050d21;
+    width: 100vw;
   }
   
   .until {
@@ -15,8 +16,8 @@
     /* 1em = one times the computed font size of the container. */
     padding: 3em;
     margin: 2em;
-    max-width: 50vh;
-    min-width: 40vh;
+    max-width: 90vw;
+    min-width: 50vw;
     color: #050d21;
     border-radius: 5px;
     background-color: #f8d648;
@@ -68,6 +69,10 @@
     align-items: center;
     margin-bottom: 10px; 
     margin-top: 0.5vh;
+    padding: 0 14px;
+    min-width: 30vh;
+    min-height: 5vh;
+    align-items: center;
     background-color: #fee6e3;
     border: 2px solid #111;
     border-radius: 8px;
@@ -77,11 +82,10 @@
     display: flex;
     font-family: Inter,sans-serif;
     font-size: 16px;
-    height: 48px;
+    height: 4vh;
     justify-content: center;
-    line-height: 24px;
+    line-height: 20px;
     max-width: 100%;
-    padding: 0 25px;
     position: relative;
     text-align: center;
     text-decoration: none;
@@ -89,6 +93,7 @@
     -webkit-user-select: none;
     touch-action: manipulation;
     z-index: 1;
+    margin-right: 1vh;
   }
   
   .button:active {
