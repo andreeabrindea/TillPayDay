@@ -46,6 +46,7 @@
     align-items: center;
     margin: auto;
     grid-column: 1 / span 2; 
+    margin-bottom: 1vh;
   }
   
   .input_date{
@@ -53,6 +54,7 @@
     justify-content: center;
     align-items: center;
     grid-column: 1 / span 2; 
+    margin-bottom: 1vh;
     }
 
   input[type="text"] {
@@ -67,8 +69,8 @@
 
   .button{
     align-items: center;
-    margin-bottom: 2vh; 
-    margin-top: 0.5vh;
+    margin-bottom: 1vh; 
+    margin-top: 1vh;
     padding: 0 14px;
     min-width: 30vh;
     min-height: 5vh;
@@ -103,7 +105,7 @@
   
   @media (min-width: 768px) {
     .button{
-      margin-top: 2vh;
+      margin-top: 1vh;
     }
   }
   
@@ -147,5 +149,5 @@
   }
   
   .pay_day_input{
-    margin-bottom: 0.5vh;
+    margin-bottom: 1vh;
   }
