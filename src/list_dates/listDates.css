@@ -6,7 +6,6 @@
     background-color: #050d21;
     height: 100vh;
     color:#050d21;
-    border-radius: 5px;
     min-height: 60vh;
 }
 @media (max-width: 768px) {
